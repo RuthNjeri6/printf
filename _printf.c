@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 			i++;
 			if (format[i] == 'c')
 				j += _putchar(va_arg(op, int));
-			else if(format[i] == 's')
+			else if (format[i] == 's')
 				j += print_string(va_arg(op, char *));
 			else if (format[i] == 'd' || format[i] == 'i')
 				j += print_num(va_arg(op, int));
