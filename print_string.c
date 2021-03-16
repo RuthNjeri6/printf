@@ -11,7 +11,7 @@ int print_string(char *str)
 
 	i = 0;
 
-	while (str[i])
+	while (str && str[i])
 	{
 		_putchar(str[i]);
 		i++;
