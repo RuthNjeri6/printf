@@ -17,25 +17,18 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] != '%')
 		{
-			_putchar(format[i]);
-			j++;
+                      _putchar(format[i]);
+                      j++;
 		}
-		else
+		else if (format[i + 1])
 		{
-			if (format[i + 1] == 'c')
+			i++;
+			if (format[i] == 'c')
 				j += _putchar(va_arg(op, int));
-			else if (format[i + 1] == 's')
+			else if (format[i] == 's')
 				j += print_string(va_arg(op, char *));
-			else if (format[i + 1] == 'd' || format[i + 1] == 'i')
+			else if (format[i] == 'd' || format[i] == 'i')
 				j += print_num(va_arg(op, int));
-			else
-
-
-
-
-				_putchar('%');
-				_putchar(format[i]);
-				j += 2;
 		}
 		i++;
 	}
